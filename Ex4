@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Ex4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double quilowatt, salarioM, valorPorQuilowatt, valorTotal, valorComDesconto;
+
+
+        salarioM = 1518;
+        quilowatt = 100;
+        valorPorQuilowatt = (salarioM/7)/100;
+        valorTotal = quilowatt*valorPorQuilowatt;
+        valorComDesconto = valorTotal*0.9;
+
+        System.out.println("o valor em reais de cada quilowatt:"+valorPorQuilowatt+"");
+        System.out.println("o valor em reais a ser pago pela residência:"+valorTotal+"");
+        System.out.println("o novo valor a ser pago pela residência considerando um desconto de 10%:"+valorComDesconto+"");
+
+    }
+}
