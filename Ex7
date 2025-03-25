@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Ex6 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double x,y;
+
+        System.out.print("Digite o valor de X:");
+        x = sc.nextDouble();
+
+        y =Math.sqrt(Math.pow(x-1/2,1.0/3));
+
+        System.out.printf("O valor da expressão é %.3f\n", y);
+    }
+}
