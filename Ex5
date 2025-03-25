@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Ex5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double slm, vha, nht, pdI, sb, I;
+
+        System.out.print("Digite o valor da hora-aula:");
+        vha = sc.nextDouble();
+        System.out.print("Digite o número de horas trabalhas:");
+        nht = sc.nextDouble();
+        System.out.print("Digite a porcentagem de desconto do INSS:");
+        I = sc.nextDouble();
+
+        sb = vha*nht;
+        pdI = (I/100)*sb;
+        slm = sb-pdI;
+
+        System.out.printf("O valor do salário liquido é igual a %.2f\n",slm);
+    }
+}
