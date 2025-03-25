@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Ex3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double combustivel, tempo, velocidadeM;
+
+        System.out.print("Digite o tempo gasto:");
+        tempo = sc.nextDouble();
+        System.out.print("Digite a velocidade média:");
+        velocidadeM = sc.nextDouble();
+
+        combustivel = (velocidadeM*tempo)/10.5;
+
+        System.out.print("O total de litro de gasolina gastos é "+combustivel+"");
+    }
+}
