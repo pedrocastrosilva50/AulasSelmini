@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class ExVsfdRenan {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a, b, c, d, e;
+
+        System.out.print("Digite um número inteiro de quatro digitos para ser invertido:");
+        a = sc.nextInt();
+
+        b = a/1000;
+        c = a/100 % 10;
+        d = a/10 % 10;
+        e = a%10;
+
+        System.out.println("O número invertido será:"+e+ +d+ +c+ +b+".");
+    }
+}
