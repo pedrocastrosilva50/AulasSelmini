@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class ExRenanSmt {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int x, y, a, b, c, d, e, f, adicao1, adicao2, somatoda;
+
+        System.out.print("Digite o primeiro número de 3 dígitos inteiro para ser invertido e depois somado:");
+        x = sc.nextInt();
+        System.out.print("Digite o segundo número de 3 dígitos inteiro para ser invertido e depois somado:");
+        y = sc.nextInt();
+
+        a = x/100;
+        b = y/100;
+        c = ((x%100)/10)*10;
+        d = ((y%100)/10)*10;
+        e = x%10*100;
+        f = y%10*100;
+        adicao1 = e+c+a;
+        adicao2 = f+d+b;
+        somatoda = adicao1 + adicao2;
+
+        System.out.println("O primeiro número de 3 dígitos inteiro para ser invertido e depois somado é:"+adicao1+".");
+
+        System.out.println("O segundo número de 3 dígitos inteiro para ser invertido e depois somado é:"+adicao2+".");
+
+        System.out.println("A soma dos número invertidos é "+somatoda+".");
+    }
+}
