@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Ex9 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a, b ,c ,d;
+
+        System.out.print("Digite um número inteiro de 3 dígitos para ser invertido:");
+        a = sc.nextInt();
+
+        b = a/100;
+        c = a % 100 / 10;
+        d = a%10;
+
+        System.out.println("O número invertido será:"+ (d*100+c*10+b) +".");
+    }
+}
