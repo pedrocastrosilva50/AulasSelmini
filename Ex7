@@ -1,10 +1,11 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Ex7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        double x,y,parte1;
+        DecimalFormat df = new DecimalFormat("0.000");
+        double x,y,parte1,parte2;
 
         System.out.print("Digite o valor de X:");
         x = sc.nextDouble();
@@ -12,6 +13,6 @@ public class Ex7 {
         parte1 =(Math.pow(x, 4) -1)/(2*Math.pow(x,2));
         y = Math.sqrt(1 + Math.pow(parte1, 2)) - (Math.pow(x,2)/2);
 
-        System.out.printf("O valor de Y é %.3f\n", y);
+        System.out.printf("O valor de Y é "+df.format(y)+".");
     }
 }
