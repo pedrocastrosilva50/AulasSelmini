@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Ex3IF {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double valorcompra, desconto1, desconto2, valortotal1, valortotal2;
+        System.out.println("Quanto deu tua compra:");
+        valorcompra = sc.nextDouble();
+
+        desconto1=(valorcompra*15)/100;
+        valortotal1=valorcompra-desconto1;
+        desconto2=(valorcompra*8)/100;
+        valortotal2=valorcompra-desconto2;
+
+        if (valorcompra>=1000) {
+            System.out.print("O valor com desconto da compra deu "+valortotal1);
+            System.out.println(" e seu desconto foi de 15%, economizando "+desconto1);
+        }
+        else {
+            System.out.print("O valor com desconto da compra deu "+valortotal2);
+            System.out.println(" e seu desconto foi de 8%, economizando "+desconto2);
+        }
+    }
+}
