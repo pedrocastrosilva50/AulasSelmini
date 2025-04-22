@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Ex2IF {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double prova1, prova2, trab1, trab2, trab3, médiaprova, médiatrab, médiatotal, pesoprova, pesotrab;
+        System.out.println("Nota da prova 1:");
+        prova1 = sc.nextDouble();
+        System.out.println("Nota da prova 2:");
+        prova2 = sc.nextDouble();
+        System.out.println("Nota do trabalho 1:");
+        trab1 = sc.nextDouble();
+        System.out.println("Nota do trabalho 2:");
+        trab2 = sc.nextDouble();
+        System.out.println("Nota do trabalho 3:");
+        trab3 = sc.nextDouble();
+
+        médiaprova=(prova1+prova2)/2;
+        médiatrab=(trab1+trab2+trab3)/3;
+        pesoprova=médiaprova*7;
+        pesotrab=médiatrab*3;
+        médiatotal=(pesoprova+pesotrab)/10;
+
+        System.out.println("Média:"+médiatotal+".");
+
+        if (médiatotal>=6) {
+            System.out.println("Boa cz, você passou");
+        }
+        else {
+            System.out.println("Rodou neguinKKKKKKKKKKKKKKKKKKKKK");
+        }
+
+    }
+}
