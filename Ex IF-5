@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Ex5IF {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double a, b, c;
+
+        System.out.println("Digite o primeiro lado do triângulo:");
+        a = sc.nextDouble();
+        System.out.println("Digite o segundo lado do triângulo:");
+        b = sc.nextDouble();
+        System.out.println("Digite o terceiro lado do triângulo:");
+        c = sc.nextDouble();
+
+        if (a<b+c && b<a+c && c<a+b) {
+            System.out.print("Corresponde a um triângulo !");
+        }
+        else {
+            System.out.print("Nada a ver, not triangle here.");
+        }
+    }
+}
