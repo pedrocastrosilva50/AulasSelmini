@@ -1,0 +1,11 @@
+public class EstruturadeRepetição1 {
+    public static void main(String[] args) {
+
+        int cont = 1;
+
+        while (cont <= 10){
+            System.out.println("Você trabalha de guê ?");
+            cont = cont + 1;
+        }
+    }
+}
