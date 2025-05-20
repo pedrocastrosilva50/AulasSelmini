@@ -4,7 +4,7 @@ public class Ex3Rep {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        double fatorial = 1, cont = 1;
+        long fatorial = 1, cont = 1;
         int resposta;
 
         System.out.println("Digite um numero para virar fatorial :");
