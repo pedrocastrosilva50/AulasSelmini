@@ -1,0 +1,26 @@
+/* programa em java para ler um valor inteiro. Se o valor for par, imprimir uma mensagem informando
+que ele é par e tambem imprimir o dobro no número. Se o valor for inmpar, imprimir uma mensagem e
+tambem o triplo do número */
+
+import java.util.Scanner;
+
+public class mingroni3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int valor;
+
+        System.out.println("Digite o número inteiro:");
+        valor = sc.nextInt();
+
+        switch (valor % 2) {
+            case 0 -> {
+                System.out.println("Seu número é par, e seu dobro é " +valor*2+ ".");
+            }
+            case 1 -> {
+                System.out.println("Seu número é impar e seu triplo é " +valor*3+ ".");
+            }
+            default -> System.out.println("mlk como vc fez isso");
+        }
+
+
+    }
