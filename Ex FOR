@@ -1,0 +1,41 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Ex0508segundo {
+    public static void main(String[] args) {
+        DecimalFormat formato = new DecimalFormat("#,##0.00");
+        Scanner sc = new Scanner(System.in);
+
+        int produtos, opcao;
+        double  valor, total = 0, valorF;
+
+        System.out.print("Digite a quantidade de produtos: ");
+        produtos = sc.nextInt();
+
+        for (int i = 1; i <= produtos; i++) {
+            System.out.print("Digite o valor do produto "+ i +": R$ ");
+            valor = sc.nextDouble();
+            total += valor;
+        }
+
+        System.out.println("Valor bruto: R$ " +total);
+
+        System.out.println("Escolha a forma de pagamento:");
+        System.out.println("1 - Pagamento á vista (10% de desconto)");
+        System.out.println("2 - Parcelado em 2x (acréscimo de 15,5%)");
+        opcao = sc.nextInt();
+
+        switch (opcao){
+            case 1 -> {
+                valorF = 0.90 * total;
+                System.out.print("O valor total da compra a ser pago é: R$ "+formato.format(valorF));
+            }
+            case 2 -> {
+                valorF = 1.155 * total;
+                System.out.print("O valor total da compra a ser pago é: R$ " +formato.format(valorF));
+            }
+            default -> System.out.print("Valor invalido");
+        }
+
+    }
+}
