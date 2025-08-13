@@ -1,0 +1,29 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class mingronivetor2 {
+    public static void main(String[] args) {
+        DecimalFormat formato = new DecimalFormat("#.###");
+        Scanner sc = new Scanner(System.in);
+
+        int [] x = new int[3];
+        int a = 1, ma = Integer.MIN_VALUE, me = Integer.MAX_VALUE;
+
+        for (int i = 0; i < x.length; i++){
+            System.out.print("Informe o "+a+"° valor: ");
+            x[i] = sc.nextInt();
+            a++;
+
+            if (x[i] > ma){
+                ma = x[i];
+            }
+            if (x[i] < me){
+                me = x[i];
+            }
+        }
+
+        System.out.println("Maior valor: "+ma);
+        System.out.print("Menor valor: "+me);
+
+    }
+}
