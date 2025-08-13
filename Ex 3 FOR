@@ -1,0 +1,25 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class mingroni3 {
+    public static void main(String[] args) {
+        DecimalFormat formato = new DecimalFormat("#.###");
+        Scanner sc = new Scanner(System.in);
+
+        double y = 0,b = 0, n;
+
+        System.out.print("Digíte um número: ");
+        n = sc.nextDouble();
+
+        for (double i = 1; i <= n ; i++){
+            if (i%2 == 0){
+                y = y - 1 / i;
+            }
+            else {
+                y = y + 1 / i;
+            }
+        }
+
+        System.out.print("O resultado é "+ formato.format(y));
+    }
+}
