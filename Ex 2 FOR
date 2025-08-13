@@ -1,0 +1,30 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class mingroni2 {
+    public static void main(String[] args) {
+        DecimalFormat formato = new DecimalFormat("#,##0.00");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digíte um número inteiro e possitivo: ");
+        int n = sc.nextInt();
+
+        if ( n <= 0 ){
+            System.out.print("Número inválido !");
+        }
+        else{
+            int divisores = 0;
+            for (int i = 1; i <= n ; i++){
+                if (n % i == 0){
+                    divisores++;
+                }
+            }
+            if (divisores == 2){
+                System.out.print(n+ " é um número primo .");
+            }
+            else {
+                System.out.println(n+ " não é um número primo");
+            }
+        }
+    }
+}
