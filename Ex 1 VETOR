@@ -1,0 +1,27 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class mingronivetor {
+    public static void main(String[] args) {
+        DecimalFormat formato = new DecimalFormat("#.###");
+        Scanner sc = new Scanner(System.in);
+
+        int [] x = new int[5];
+        int a = 1;
+
+        //armazenar 5 valores recebidos pelo teclado
+
+        for (int i = 0; i < x.length; i++){
+            System.out.print("Informe o "+a+" valor: ");
+            a++;
+            x[i] = sc.nextInt();
+        }
+
+        //impressão dos valores no terminal
+        for(int i = 0; i < x.length; i++){
+            System.out.println(x[i]);
+        }
+
+
+    }
+}  
