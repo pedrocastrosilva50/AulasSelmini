@@ -1,0 +1,36 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class numeroAleatorio4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat formato = new DecimalFormat("#,##0.00");
+
+        System.out.print("Qual número de funcionários da empresa ? ");
+        int quantFunci = sc.nextInt();
+
+        String[] funcionarios = new String[quantFunci];
+        double [] salario = new double[quantFunci];
+        double total = 0;
+        double maiorSalario = 0;
+        int posicao = 0;
+
+        for ( int i = 0; i < quantFunci; i++){
+            System.out.print("\n Digite o nome do "+(i+1)+"° funcionário: ");
+            funcionarios[i] = sc.next();
+            System.out.print("\n Qual o salário de "+ funcionarios[i] +" ? ");
+            salario[i] = sc.nextDouble();
+
+            // folha salarial
+            total = total + salario[i];
+            if (salario[i] > maiorSalario){
+                maiorSalario = salario[i];
+                posicao = i;
+            }
+        }
+
+        System.out.print("\n A folha salarial dá um total de R$" + formato.format(total));
+        System.out.print("\n A média salarial dá um total de R$" + formato.format(total/quantFunci) +" ");
+        System.out.print("\n O funcionário com o maior salário é o Sr(a) " +funcionarios[posicao] +" no valor de " +formato.format(salario[posicao]));
+    }
+}
