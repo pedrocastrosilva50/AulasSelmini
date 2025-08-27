@@ -1,0 +1,41 @@
+import java.util.Random;
+
+public class numeroAleatorio3 {
+    public static void main(String[] args) {
+        Random rd = new Random();
+        Boolean achou;
+
+        int[] vetor = new int[10];
+        int aux;
+
+//        antes da ordenação
+
+        System.out.println("Antes da ordenação");
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = rd.nextInt(1250, 5000);
+            System.out.print(vetor[i]+ "  ");
+        }
+
+//        processo de ordenação --> ordem crescente
+
+        for (int k = 0; k < vetor.length; k++) {
+            for (int i = 0; i < vetor.length - 1; i++){
+                if (vetor[i] > vetor[i + 1]){
+                    aux = vetor[i];
+                    vetor[i] = vetor[i+1];
+                    vetor[i+1] = aux;
+                }
+            }
+        }
+
+//        impressão após ordenação
+        System.out.println("\n Após ordenação");
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print(vetor[i]+ "  ");
+        }
+
+    }
+}
+
+
+
