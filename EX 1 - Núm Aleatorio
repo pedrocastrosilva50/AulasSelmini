@@ -1,0 +1,23 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class numeroAleatorio1 {
+    public static void main(String[] args) {
+        DecimalFormat formato = new DecimalFormat("0");
+        Scanner sc = new Scanner(System.in);
+
+        /* primeiro modo pensado por mim
+        double aux = Math.random();
+        System.out.println( formato.format(aux*10)); */
+
+        /* pensado pelo professor */
+
+        double aux = Math.random()*10;
+        int valor = (int)aux;
+        System.out.println(aux);
+        System.out.println(valor);
+
+
+
+    }
+}
