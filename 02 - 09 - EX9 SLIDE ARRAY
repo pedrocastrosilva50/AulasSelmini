@@ -1,0 +1,28 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class ex9 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("0.####");
+
+        System.out.println("Quantos arquivos deseja imprimir ?");
+        int n = sc.nextInt();
+
+        String[] nomes = new String[n];
+        long[] tamanho = new long[n];
+
+        for (int i = 0; i < n; i++){
+            System.out.print("\nNome do arquivo "+ (i+1)+": ");
+            nomes[i] = sc.next();
+            System.out.print("Tamanho do arquivo "+(i+1)+"(em bytes): ");
+            tamanho[i] = sc.nextLong();
+        }
+
+        for (int i = 0; i < n; i++){
+            double mb = tamanho[i] / 1024.0 / 1024.0;
+            double gb = tamanho[i] / 1024.0 / 1024.0 / 1024.0;
+            System.out.printf("\nO arquivo "+nomes[i]+" tem " +df.format(mb)+ " MB e "+df.format(gb)+" GB.");
+        }
+    }
+}
