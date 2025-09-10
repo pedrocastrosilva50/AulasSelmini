@@ -1,0 +1,58 @@
+import java.text.DecimalFormat;
+import java.util.Random;
+
+public class Ex3Matriz {
+    public static void main(String[] args) {
+        Random rd = new Random();
+        DecimalFormat df = new DecimalFormat("0.0");
+        DecimalFormat dd = new DecimalFormat("0");
+
+
+        double [] [] temp = new double[10][12];
+        double [] media = new double[temp.length];
+        double aux;
+        double maiorMedia = Double.MIN_VALUE;
+        double menorMedia = Double.MAX_VALUE;
+        double anoMaior = 0, anoMenor = 0;
+
+
+
+        for(int i = 0; i < temp.length; i++) {
+            for(int j = 0; j < temp[i].length; j++){
+                temp[i][j] = rd.nextDouble(10,36);
+            }
+        }
+
+        for(int i = 0; i< temp.length; i++) {
+            aux = 0;
+            System.out.print("Ano "+(i+1)+" = ");
+            for (int j = 0; j < temp[i].length; j++) {
+                System.out.print((df.format(temp[i][j]))+"\t");
+                aux += temp[i][j];
+            }
+            System.out.println();
+            media[i] = aux/ temp[i].length;
+            if (media[i] > maiorMedia){
+                maiorMedia = media[i];
+                anoMaior = i;
+            }
+            if (media[i] < menorMedia){
+                menorMedia = media[i];
+                anoMenor = i;
+            }
+        }
+
+        for (int i=0; i< media.length;i++){
+            System.out.println("\nMédia das temperaturas no ano "+(i+1)+" = "+df.format(media[i])+"°C");
+
+        }
+
+        System.out.println("\n================================================================");
+
+
+        System.out.println("\nO ano com a maior média é o "+ dd.format(anoMaior+1) +"º e seu valor é "+ df.format(maiorMedia)+"°C");
+
+        System.out.println("\nO ano com a menor média é o "+ dd.format(anoMenor+1) +"º e seu valor é "+ df.format(menorMedia)+"°C");
+
+    }
+}
