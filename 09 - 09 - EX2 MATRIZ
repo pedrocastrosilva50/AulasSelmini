@@ -1,0 +1,39 @@
+import java.util.Random;
+
+public class Ex2Matriz {
+    public static void main(String[] args) {
+        Random rd = new Random();
+
+        int maiorValor = Integer.MIN_VALUE;
+
+        int [] [] m = new int[10][10];
+
+        for(int i = 0; i < m.length; i++) {
+            for(int j = 0; j < m[i].length; j++){
+                m[i][j] = rd.nextInt(-1000,0);
+                if (m[i][j] > maiorValor) {
+                    maiorValor = m[i][j];
+                }
+            }
+        }
+
+        for(int i = 0; i< m.length; i++) {
+            for (int j = 0; j < m[i].length; j++) {
+                System.out.print(m[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\nMaior valor encontrado: " + maiorValor);
+        System.out.println("Localizações (linha, coluna):");
+
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m.length; j++) {
+                if (m[i][j] == maiorValor) {
+                    System.out.printf("("+i +"," +j+") ");
+                }
+            }
+        }
+
+    }
+}
