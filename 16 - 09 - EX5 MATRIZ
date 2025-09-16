@@ -1,0 +1,46 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Ex5Matriz {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rd = new Random();
+
+        System.out.print("Quantas linhas terá o programa : ");
+        int linha = sc.nextInt();
+
+        System.out.print("Quantas colunas terá o programa : ");
+        int coluna = sc.nextInt();
+
+        int [][] m = new int [linha][coluna];
+
+        System.out.println("Matriz Original");
+        for (int i = 0; i<linha; i++){
+            for (int j = 0; j<coluna; j++){
+                m[i][j] = rd.nextInt(1,10);
+                System.out.print(m[i][j] + "\t");
+            }
+            System.out.println("\t");
+        }
+
+        // transformar matriz
+
+        int [][] mt = new int[coluna][linha];
+        for (int i = 0; i<linha; i++){
+            for (int j = 0; j<coluna; j++) {
+            mt[j][i] = m[i][j];
+            }
+        }
+
+        // imprime transposta
+
+        System.out.println("Matriz transposta:");
+        for (int i = 0; i<coluna; i++){
+            for (int j = 0; j<linha; j++) {
+                System.out.print(mt[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        
+    }
+}
