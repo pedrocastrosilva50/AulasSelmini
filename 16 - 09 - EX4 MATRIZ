@@ -1,0 +1,51 @@
+import java.text.DecimalFormat;
+import java.util.Random;
+
+public class Ex4Matriz {
+    public static void main(String[] args) {
+        DecimalFormat df = new DecimalFormat("R$ #,##0.00");
+        Random rd = new Random();
+
+        String[] categorias = {"Eletrônicos", "Roupas", "Alimentos"};
+        String[] meses = {"Jan", "Fev", "Mar", "Abr", "Mai", "Jun"};
+
+        double[][] vendas = new double[categorias.length][meses.length];
+        double total, maiorTotal= 0;
+        int index = 0;
+
+
+
+        for (int i = 0; i< vendas.length; i++){
+            for (int j = 0;j< vendas[i].length; j++){
+                vendas [i][j] = rd.nextDouble(2, 10);
+                System.out.print(df.format(vendas[i][j])+"   \t");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\n Total de vendas por categoria: ");
+
+        for (int i = 0; i< vendas.length; i++){
+            total = 0;
+            for (int j = 0;j< vendas[i].length; j++) {
+            total+= vendas[i][j];
+            }
+            System.out.println(categorias[i]+" ==== > "+ df.format(total));
+        }
+
+        System.out.println("\n Total de vendas por mês: ");
+        for (int j = 0; j< meses.length; j++){
+            total = 0;
+            for (int i = 0;i< vendas.length; i++) {
+                total+= vendas[i][j];
+            }
+            System.out.println(meses[j] + " ====> " + df.format(total));
+            if (total > maiorTotal){
+                maiorTotal = total;
+                index = j;
+            }
+        }
+        System.out.println("Mês com o maior total de vendas: "+ meses[index]);
+        
+    }
+}
