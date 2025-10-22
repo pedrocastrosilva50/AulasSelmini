@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Ex1ManiText {
+    public static void main(String[] args) {
+        String[] palavra = new String[4];
+
+        lerPalavra(palavra);
+        localizarPar(palavra);
+
+    }
+
+    public static void lerPalavra(String[] palavra){
+        Scanner sc = new Scanner(System.in);
+        for(int i = 0; i < palavra.length;i++){
+            System.out.print("Palavra : ");
+            palavra[i] = sc.next();
+        }
+    }
+
+    public static void localizarPar(String[] palavra) {
+        String inverso;
+        boolean achou = false;
+
+        for (int j = 0; j < palavra.length; j++) {
+            inverso = inverter(palavra[j]);
+            for (int i = j + 1; i < palavra.length;i++){
+                if(inverso.equalsIgnoreCase(palavra[i])){
+                    System.out.println("("+palavra[j]+", "+palavra[i]+ ")");
+                    achou = true;
+                }
+            }
+        }
+        if (achou == false) {
+            System.out.print("Nenhum par inverso encontrado.");
+        }
+    }
+
+    public static String inverter(String palavra){
+        char aux ;
+        char[] letra = palavra.toCharArray();
+        int j = palavra.length()-1;
+
+        for(int i = 0; i < letra.length/2; i++){
+            aux = letra[i];
+            letra[i] = letra[j];
+            letra[j] = aux;
+            j--;
+        }
+
+        return new String(letra);
+    }
+}
