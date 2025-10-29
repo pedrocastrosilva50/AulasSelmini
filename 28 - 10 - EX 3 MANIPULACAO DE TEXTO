@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Ex3ManipText {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String palavra, cripto;
+        int deslocamento;
+
+        System.out.print("Palavra: ");
+        palavra = sc.nextLine();
+        System.out.print("Deslocamento: ");
+        deslocamento = sc.nextInt();
+        cripto = rotacionar(palavra, deslocamento);
+
+        System.out.println(cripto);
+    }
+
+    public static String rotacionar(String palavra, int d){
+        String cpt = "";
+        int aux;
+        char ch;
+        // deslocamento possitivo = int desloc = d % 26;
+        int desloc = ((d % 26) + 26) % 26;
+
+        for(int i = 0; i < palavra.length(); i++){
+            ch = palavra.charAt(i);
+            if (ch >= 'a' && ch <= 'z'){
+                aux = ch - 'a';
+                cpt += (char) ('a' + (aux + desloc) % 26);
+            } else if (ch >= 'A' && ch <= 'Z') {
+                aux = ch - 'A';
+                cpt += (char) ('A' + (aux + desloc) % 26);
+            }
+            else{
+                cpt += ch;
+            }
+        }
+        return cpt;
+    }
+
+}
